@@ -1,0 +1,283 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>BMWC Heat Stress Tool</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #f4f7f9;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 700px;
+            margin: auto;
+            background: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0,0,0,0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #2c3e50;
+        }
+        label {
+            display: block;
+            margin-top: 15px;
+            font-weight: bold;
+        }
+        select, input[type="number"] {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+        .checkbox-group {
+            margin-top: 10px;
+        }
+        .checkbox-group label {
+            font-weight: normal;
+            display: block;
+            margin-left: 10px;
+        }
+        button {
+            margin-top: 20px;
+            width: 100%;
+            padding: 12px;
+            background-color: #3498db;
+            color: white;
+            border: none;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #2980b9;
+        }
+        .result {
+            margin-top: 20px;
+            padding: 15px;
+            border-radius: 5px;
+            font-weight: bold;
+            text-align: center;
+        }
+        .low { background-color: #d4edda; color: #155724; }
+        .moderate { background-color: #fff3cd; color: #856404; }
+        .high { background-color: #ffeeba; color: #856404; }
+        .very-high { background-color: #f8d7da; color: #721c24; }
+        .disclaimer {
+            margin-top: 30px;
+            font-size: 0.9em;
+            color: #555;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1>BMWC Heat Stress Tool</h1>
+    <form id="heatForm">
+        <label for="gender">Gender:</label>
+        <select id="gender">
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+        </select>
+
+        <label for="age">Age:</label>
+        <input type="number" id="age" min="0">
+
+        <label for="height">Height (inches):</label>
+        <select id="height">
+            <option value="48">48</option>
+<option value="49">49</option>
+<option value="50">50</option>
+<option value="51">51</option>
+<option value="52">52</option>
+<option value="53">53</option>
+<option value="54">54</option>
+<option value="55">55</option>
+<option value="56">56</option>
+<option value="57">57</option>
+<option value="58">58</option>
+<option value="59">59</option>
+<option value="60">60</option>
+<option value="61">61</option>
+<option value="62">62</option>
+<option value="63">63</option>
+<option value="64">64</option>
+<option value="65">65</option>
+<option value="66">66</option>
+<option value="67">67</option>
+<option value="68">68</option>
+<option value="69">69</option>
+<option value="70">70</option>
+<option value="71">71</option>
+<option value="72">72</option>
+<option value="73">73</option>
+<option value="74">74</option>
+<option value="75">75</option>
+<option value="76">76</option>
+<option value="77">77</option>
+<option value="78">78</option>
+<option value="79">79</option>
+<option value="80">80</option>
+<option value="81">81</option>
+<option value="82">82</option>
+<option value="83">83</option>
+<option value="84">84</option>
+        </select>
+
+        <label for="weight">Weight (lbs):</label>
+        <select id="weight">
+            <option value="80">80</option>
+<option value="85">85</option>
+<option value="90">90</option>
+<option value="95">95</option>
+<option value="100">100</option>
+<option value="105">105</option>
+<option value="110">110</option>
+<option value="115">115</option>
+<option value="120">120</option>
+<option value="125">125</option>
+<option value="130">130</option>
+<option value="135">135</option>
+<option value="140">140</option>
+<option value="145">145</option>
+<option value="150">150</option>
+<option value="155">155</option>
+<option value="160">160</option>
+<option value="165">165</option>
+<option value="170">170</option>
+<option value="175">175</option>
+<option value="180">180</option>
+<option value="185">185</option>
+<option value="190">190</option>
+<option value="195">195</option>
+<option value="200">200</option>
+<option value="205">205</option>
+<option value="210">210</option>
+<option value="215">215</option>
+<option value="220">220</option>
+<option value="225">225</option>
+<option value="230">230</option>
+<option value="235">235</option>
+<option value="240">240</option>
+<option value="245">245</option>
+<option value="250">250</option>
+<option value="255">255</option>
+<option value="260">260</option>
+<option value="265">265</option>
+<option value="270">270</option>
+<option value="275">275</option>
+<option value="280">280</option>
+<option value="285">285</option>
+<option value="290">290</option>
+<option value="295">295</option>
+<option value="300">300</option>
+<option value="305">305</option>
+<option value="310">310</option>
+<option value="315">315</option>
+<option value="320">320</option>
+<option value="325">325</option>
+<option value="330">330</option>
+<option value="335">335</option>
+<option value="340">340</option>
+<option value="345">345</option>
+<option value="350">350</option>
+        </select>
+
+        <label for="region">Region:</label>
+        <select id="region">
+            <option value="south">South</option>
+            <option value="southwest">Southwest</option>
+            <option value="midwest">Midwest</option>
+            <option value="southeast">Southeast</option>
+            <option value="northeast">Northeast</option>
+            <option value="northwest">Northwest</option>
+            <option value="other">Other/Unknown</option>
+        </select>
+
+        <label for="previous">Previous Heat Stress Issues:</label>
+        <select id="previous">
+            <option value="no">No</option>
+            <option value="yes">Yes</option>
+        </select>
+
+        <label>Current Health Conditions:</label>
+        <div class="checkbox-group">
+            <label><input type="checkbox" class="condition" value="none"> None</label>
+            <label><input type="checkbox" class="condition" value="diabetes"> Diabetes</label>
+            <label><input type="checkbox" class="condition" value="heart"> Heart Disease</label>
+            <label><input type="checkbox" class="condition" value="respiratory"> Respiratory Issues</label>
+            <label><input type="checkbox" class="condition" value="hypertension"> Hypertension</label>
+        </div>
+
+        <label for="bmi">Calculated BMI:</label>
+        <input type="number" id="bmi" readonly>
+
+        <button type="button" onclick="calculateScore()">Calculate Risk</button>
+    </form>
+
+    <div id="result" class="result"></div>
+    <div class="disclaimer">
+        This tool is for informational use only. Please consult your doctor for more information.
+    </div>
+</div>
+
+<script>
+    function calculateScore() {
+        const gender = document.getElementById('gender').value;
+        const age = parseInt(document.getElementById('age').value);
+        const height = parseInt(document.getElementById('height').value);
+        const weight = parseInt(document.getElementById('weight').value);
+        const region = document.getElementById('region').value;
+        const previous = document.getElementById('previous').value;
+        const conditions = document.querySelectorAll('.condition:checked');
+
+        const bmi = (weight / (height * height)) * 703;
+        document.getElementById('bmi').value = bmi.toFixed(1);
+
+        let score = 0;
+
+        if (gender === 'female') score += 1;
+        if (bmi > 30) score += 3;
+        else if (bmi > 25) score += 2;
+
+        if (age > 60) score += 2;
+        else if (age < 18) score += 1;
+
+        if (region === 'south' || region === 'southwest') score += 3;
+        else if (region === 'midwest' || region === 'southeast' || region === 'other') score += 2;
+        else if (region === 'northeast' || region === 'northwest') score += 1;
+
+        if (previous === 'yes') score += 3;
+
+        let conditionScore = 0;
+        conditions.forEach(c => {
+            if (c.value !== 'none') conditionScore += 2;
+        });
+        score += conditionScore;
+
+        const result = document.getElementById('result');
+        result.className = 'result';
+        if (score <= 3) {
+            result.classList.add('low');
+            result.textContent = `Score: ${score} — Low Risk`;
+        } else if (score <= 6) {
+            result.classList.add('moderate');
+            result.textContent = `Score: ${score} — Moderate Risk`;
+        } else if (score <= 9) {
+            result.classList.add('high');
+            result.textContent = `Score: ${score} — High Risk`;
+        } else {
+            result.classList.add('very-high');
+            result.textContent = `Score: ${score} — Very High Risk`;
+        }
+    }
+</script>
+</body>
+</html>
